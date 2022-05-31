@@ -109,6 +109,9 @@ async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
+    await message.reply_photo(
+    photo=f"{ALIVE_IMG}",
+   )
     await message.reply_text(
         "🤖 bot status:\n"
         f"• **uptime:** `{uptime}`\n"
