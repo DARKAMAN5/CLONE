@@ -6,7 +6,7 @@ from pyrogram import Client as Bot
 from config import API_HASH, API_ID, BG_IMG, BOT_TOKEN
 
 
-response = requests.get(BG_IMAGE)
+response = requests.get(BG_IMG)
 with open("./etc/foreground.png", "wb") as file:
     file.write(response.content)
 
@@ -19,7 +19,7 @@ bot = Bot(
     plugins=dict(root="handlers"),
 )
 
-print(f"[INFO]: VEEZ MUSIC v{__version__} STARTED !")
+print(f"[INFO]: GHOST MUSIC v{__version__} STARTED !")
 
 bot.start()
 run()
